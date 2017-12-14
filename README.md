@@ -2,17 +2,30 @@
 
 This document describes the steps to install, configure and run Tomcat server on an AWS EC2 instance. This involves:
 
-* Step 1: Install Java (JDK) 8 on the AWS EC2 instance
+* Step 1: Install Java (JDK) 8 or higher on the AWS EC2 instance
 * Step 2: Install Tomcat 8 on the AWS EC2 instance
 * Step 3: Configure Tomcat to automatically start server on system restart
 
 Once setup is complete, reboot EC2 instance to start Tomcat automatically.
 
-# Install Java (JDK) 8 on AWS EC2
+# Install Java (JDK) 8 or higher on AWS EC2
 
+To install Java (JDK):
+* Go to http://www.oracle.com/technetwork/java/javase/downloads/index.html
+* Choose the appropriate download link
+* Choose the <b>Accept License Agreement</b> radio button on the following page
+
+Copy the download URL for linux-x64.rpm file and head over to AWS EC2 instance command line.
+
+Download JDK (make sure the enter the correct URL copied above):
+```
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u71-b15/jdk-8u71-linux-x64.rpm
+```
 
+Install JDK (make sure to use the correct file name according to JDK version):
+```
 sudo rpm -i jdk-8u71-linux-x64.rpm
+```
 
 # Install Tomcat 8 on AWS EC2
 
